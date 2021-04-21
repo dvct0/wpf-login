@@ -1,19 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Data.Entity;
 using System.Timers;
+using System.Windows;
 
 namespace wpf_login
 {
@@ -41,6 +31,7 @@ namespace wpf_login
                             adminPanel.Owner = this;
                             adminPanel.Title += " - " + sLogin.Text;
                             adminPanel.Show();
+                            adminPanel.Login.Text = sLogin.Text;
                         }
                         else if (userRole[0] == 1)//если аккаунт пользователя, то открытие пользовательской панели
                         {
@@ -63,7 +54,7 @@ namespace wpf_login
                 }
             }
         }
-        
+
         private void BtnReg(object sender, RoutedEventArgs e)//регистрация
         {
             using (dbUsersEntities db = new dbUsersEntities())
@@ -133,7 +124,7 @@ namespace wpf_login
             }
         }
 
-        public static bool CheckPass(string  userData) //проверка на совпадение пароля
+        public static bool CheckPass(string userData) //проверка на совпадение пароля
         {
             using (dbUsersEntities db = new dbUsersEntities())
             {
@@ -154,22 +145,23 @@ namespace wpf_login
             Task.Delay(100);//обновление таймера каждую секунду
         }
 
-        public void SaveLog(string login)//остановить таймер и записать в лог информацию о сессии.//ПЕРЕДЕЛАТЬ БД (таблицу logsData) и код!!!
+        public void SaveLog(string login)//остановить таймер и записать в лог информацию о сессии.
         {
             t2 = DateTime.Now;
             TimeSpan ts = t2 - t1;
-
+            DateTime Date = DateTime.Today;
             using (dbUsersEntities db = new dbUsersEntities())
             {
                 int codePerson = db.person.Where(c => c.login_user == login).Select(c => c.code_person).FirstOrDefault();
                 logsData log = new logsData
                 {
+                    date_session = Date,
                     code_person = codePerson,
                     time = Convert.ToString(ts.Hours.ToString() + ":" + ts.Minutes.ToString() + ":" + ts.Seconds.ToString())
                 };
                 db.logsData.Add(log);
                 db.SaveChanges();
-            }   
+            }
 
             timer1.Stop();
         }

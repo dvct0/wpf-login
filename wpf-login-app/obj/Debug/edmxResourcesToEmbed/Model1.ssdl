@@ -6,7 +6,7 @@
     </Key>
     <Property Name="id_session" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="code_person" Type="int" />
-    <Property Name="date_session" Type="date" />
+    <Property Name="date_session" Type="datetime" />
     <Property Name="time" Type="varchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="person">

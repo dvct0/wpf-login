@@ -18,30 +18,16 @@ namespace wpf_login
 {
     public partial class AdminPanel : Window
     {
-        bool IsActiveWindow = true;
         SessionTimer Timer = new SessionTimer();//включение таймера
 
         public AdminPanel()
         {
             InitializeComponent();
-           /* Task.Run(() => //обновление таймера
-            {
-                while (IsActiveWindow == true)
-                {
-                    Dispatcher.Invoke(new Action(() =>
-                    {
-                        Timer.t2 = DateTime.Now;
-                        TimeSpan ts = Timer.t2 - Timer.t1;
-                        sTimer.Content = ts.Hours.ToString() + ":" + ts.Minutes.ToString() + ":" + ts.Seconds.ToString();
-                    }), null);
-                }
-            });*/
         }
 
         private void SaveLog(object sender, EventArgs e)//остановить таймер и записать в лог информацию о сессии. Срабатывание при закрытии окна
         {
-            Timer.SaveLog(sLogin.Text);
-            IsActiveWindow = false;
+            Timer.SaveLog(Login.Text);
         }
 
         private void Change(object sender, RoutedEventArgs e)//изменение данных выбранного пользователя

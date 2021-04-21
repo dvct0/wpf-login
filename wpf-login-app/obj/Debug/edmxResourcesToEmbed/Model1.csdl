@@ -45,7 +45,7 @@
     </Key>
     <Property Name="id_session" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="code_person" Type="Int32" />
-    <Property Name="date_session" Type="DateTime" Precision="0" />
+    <Property Name="date_session" Type="DateTime" Precision="3" />
     <Property Name="time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="person" Relationship="Self.FK_logsData_person" FromRole="logsData" ToRole="person" />
   </EntityType>

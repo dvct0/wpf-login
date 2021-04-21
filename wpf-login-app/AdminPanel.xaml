@@ -9,6 +9,7 @@
         Background="#E0F2F1" Closed="SaveLog">
 
     <Grid>
+        <TextBox x:Name="Login" Visibility="Collapsed"></TextBox>
         <Rectangle Fill="#26A69A" Width="640" Height="220" HorizontalAlignment="Center" VerticalAlignment="Center" RadiusX="10" RadiusY="10"/>
         <!--VIEW DATA-->
         <WrapPanel x:Name="viewForm" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center">
