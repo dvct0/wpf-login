@@ -1,0 +1,124 @@
+C:\Users\user\Desktop\wpf_login\bin\Debug\wpf_login.exe.config
+C:\Users\user\Desktop\wpf_login\bin\Debug\wpf_login.exe
+C:\Users\user\Desktop\wpf_login\bin\Debug\wpf_login.pdb
+C:\Users\user\Desktop\wpf_login\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\wpf_login\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\wpf_login\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\wpf_login\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.csprojAssemblyReference.cache
+C:\Users\user\Desktop\wpf_login\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\wpf_login\obj\Debug\App.g.cs
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login_Content.g.cs
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login_MarkupCompile.cache
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login_MarkupCompile.lref
+C:\Users\user\Desktop\wpf_login\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.g.resources
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.Properties.Resources.resources
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.csproj.GenerateResource.cache
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.csproj.CopyComplete
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.exe
+C:\Users\user\Desktop\wpf_login\obj\Debug\wpf_login.pdb
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\wpf_login.exe.config
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\wpf_login.exe
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\wpf_login.pdb
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\EntityFramework.dll
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\EntityFramework.SqlServer.dll
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\EntityFramework.xml
+G:\учёба\Маслов Р.А\wpf_login\bin\Debug\EntityFramework.SqlServer.xml
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.csprojAssemblyReference.cache
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\MainWindow.g.cs
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\App.g.cs
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login_Content.g.cs
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login_MarkupCompile.cache
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login_MarkupCompile.lref
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\MainWindow.baml
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.g.resources
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.Properties.Resources.resources
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.csproj.GenerateResource.cache
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.csproj.CoreCompileInputs.cache
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.csproj.CopyComplete
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.exe
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\wpf_login.pdb
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\UserPanel.g.cs
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\UserPanel.baml
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\AdminPanel.g.cs
+G:\учёба\Маслов Р.А\wpf_login\obj\Debug\AdminPanel.baml
+C:\Users\user\Desktop\wpf_login\obj\Debug\AdminPanel.g.cs
+C:\Users\user\Desktop\wpf_login\obj\Debug\UserPanel.g.cs
+C:\Users\user\Desktop\wpf_login\obj\Debug\AdminPanel.baml
+C:\Users\user\Desktop\wpf_login\obj\Debug\UserPanel.baml
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\wpf_login.exe.config
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\wpf_login.exe
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\wpf_login.pdb
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\EntityFramework.dll
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\EntityFramework.SqlServer.dll
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\EntityFramework.xml
+D:\bin\student\Шмаков\cs\wpf_login\bin\Debug\EntityFramework.SqlServer.xml
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.csprojAssemblyReference.cache
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\AdminPanel.g.cs
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\MainWindow.g.cs
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\UserPanel.g.cs
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\App.g.cs
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login_Content.g.cs
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login_MarkupCompile.cache
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login_MarkupCompile.lref
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\AdminPanel.baml
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\MainWindow.baml
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\UserPanel.baml
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.g.resources
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.Properties.Resources.resources
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.csproj.GenerateResource.cache
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.csproj.CopyComplete
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.exe
+D:\bin\student\Шмаков\cs\wpf_login\obj\Debug\wpf_login.pdb
+D:\bin\student\Shmakov\wpf_login\bin\Debug\wpf_login.exe.config
+D:\bin\student\Shmakov\wpf_login\bin\Debug\wpf_login.exe
+D:\bin\student\Shmakov\wpf_login\bin\Debug\wpf_login.pdb
+D:\bin\student\Shmakov\wpf_login\bin\Debug\EntityFramework.dll
+D:\bin\student\Shmakov\wpf_login\bin\Debug\EntityFramework.SqlServer.dll
+D:\bin\student\Shmakov\wpf_login\bin\Debug\EntityFramework.xml
+D:\bin\student\Shmakov\wpf_login\bin\Debug\EntityFramework.SqlServer.xml
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.csprojAssemblyReference.cache
+D:\bin\student\Shmakov\wpf_login\obj\Debug\AdminPanel.g.cs
+D:\bin\student\Shmakov\wpf_login\obj\Debug\MainWindow.g.cs
+D:\bin\student\Shmakov\wpf_login\obj\Debug\UserPanel.g.cs
+D:\bin\student\Shmakov\wpf_login\obj\Debug\App.g.cs
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login_Content.g.cs
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login_MarkupCompile.cache
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login_MarkupCompile.lref
+D:\bin\student\Shmakov\wpf_login\obj\Debug\AdminPanel.baml
+D:\bin\student\Shmakov\wpf_login\obj\Debug\MainWindow.baml
+D:\bin\student\Shmakov\wpf_login\obj\Debug\UserPanel.baml
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.g.resources
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.Properties.Resources.resources
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.csproj.GenerateResource.cache
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.csproj.CoreCompileInputs.cache
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.csproj.CopyComplete
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.exe
+D:\bin\student\Shmakov\wpf_login\obj\Debug\wpf_login.pdb
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\wpf_login.exe.config
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\wpf_login.exe
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\wpf_login.pdb
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\EntityFramework.dll
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\EntityFramework.xml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.csprojAssemblyReference.cache
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\AdminPanel.g.cs
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\UserPanel.g.cs
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\App.g.cs
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login_Content.g.cs
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login_MarkupCompile.cache
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login_MarkupCompile.lref
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\AdminPanel.baml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\MainWindow.baml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\UserPanel.baml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.g.resources
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.Properties.Resources.resources
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.csproj.GenerateResource.cache
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.csproj.CopyComplete
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.exe
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\wpf_login.pdb
