@@ -197,7 +197,7 @@ namespace wpf_login
         {
             t2 = DateTime.Now;
             TimeSpan ts = t2 - t1;
-            DateTime Date = DateTime.Today;
+            DateTime Date = DateTime.Now;
             using (dbUsersEntities db = new dbUsersEntities())
             {
                 int codePerson = db.person.Where(c => c.login_user == login).Select(c => c.code_person).FirstOrDefault();
