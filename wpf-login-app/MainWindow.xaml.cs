@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 
@@ -14,91 +13,120 @@ namespace wpf_login
             InitializeComponent();
         }
 
-        private void BtnLogin(object sender, RoutedEventArgs e) //авторизация
+        private void BtnLogin(object sender, RoutedEventArgs e) //АВТОРИЗАЦИЯ
         {
             using (dbUsersEntities db = new dbUsersEntities())
             {
-                if (Authorization.Checklogin(sLogin.Text)) //проверка на существование пользователя
+                try
                 {
-                    if (Authorization.CheckPass(sPass.Password))//проверка на совпадение пароля
+                    if (Authorization.Checklogin(sLogin.Text)) //проверка на существование пользователя
                     {
-                        sStatus.Content = "Авторизация успешна";
-                        List<int?> userRole = (from user in db.users where user.login == sLogin.Text select user.role).ToList();
-                        if (userRole[0] == 2)//если аккаунт админа, то открытие администраторской панели
+                        if (Authorization.CheckPass(sPass.Password))//проверка на совпадение пароля
                         {
-                            AdminPanel adminPanel = new AdminPanel();
-                            //this.Close(); //закрывает первое окно, только при независимых окнах
-                            adminPanel.Owner = this;
-                            adminPanel.Title += " - " + sLogin.Text;
-                            adminPanel.Show();
-                            adminPanel.Login.Text = sLogin.Text;
+                            sStatus.Content = "Авторизация успешна";
+                            List<int?> userRole = (from user in db.users where user.login == sLogin.Text select user.role).ToList();
+                            if (userRole[0] == 2)//если аккаунт админа, то открытие панели администратора
+                            {
+                                AdminPanel adminPanel = new AdminPanel();
+                                adminPanel.Owner = this;
+                                adminPanel.Title += " - " + sLogin.Text;
+                                adminPanel.Show();
+                                adminPanel.Login.Text = sLogin.Text;
+                            }
+                            else if (userRole[0] == 1)//если аккаунт пользователя, то открытие панели пользователя
+                            {
+                                UserPanel userPanel = new UserPanel();
+                                userPanel.Owner = this;
+                                userPanel.Title += " - " + sLogin.Text;
+                                userPanel.Show();
+                                userPanel.sLogin.Text = sLogin.Text;
+                            }
                         }
-                        else if (userRole[0] == 1)//если аккаунт пользователя, то открытие пользовательской панели
+                        else
                         {
-                            UserPanel userPanel = new UserPanel();
-                            //this.Close(); //закрывает первое окно, только при независимых окнах
-                            userPanel.Owner = this;
-                            userPanel.Title += " - " + sLogin.Text;
-                            userPanel.Show();
-                            userPanel.sLogin.Text = sLogin.Text;
+                            sStatus.Content = "Пароль неверный!";
                         }
                     }
                     else
                     {
-                        sStatus.Content = "Пароль неверный!";
+                        sStatus.Content = "Такого пользователя не существует!";
                     }
                 }
-                else
+                catch
                 {
-                    sStatus.Content = "Такого пользователя не существует!";
+                    sStatus.Content = "Ошибка! Возможно проблемы с сетью.";
                 }
             }
         }
 
-        private void BtnReg(object sender, RoutedEventArgs e)//регистрация
+        private void BtnReg(object sender, RoutedEventArgs e)//РЕГИСТРАЦИЯ
         {
-            using (dbUsersEntities db = new dbUsersEntities())
+            try
             {
-                if (Authorization.Checklogin(sLoginReg.Text)) //проверка на существование пользователя
+                using (dbUsersEntities db = new dbUsersEntities())
                 {
-                    sStatus.Content = "Такой пользователь уже существует!";
+                    if (Authorization.Checklogin(sLoginReg.Text)) //проверка на существование пользователя
+                    {
+                        sStatus.Content = "Такой пользователь уже существует!";
+                    }
+                    else if (Authorization.ValidInput(sLoginReg.Text, "login") && Authorization.ValidInput(sPassReg.Password, "sPass") && Authorization.ValidInput(sNameReg.Text, "name")) //проверка введенных данных, если все верно, то создается новый пользователь.
+                    {
+                        users user = new users { login = sLoginReg.Text, pass = sPassReg.Password, role = 1 }; //создаем объект user
+                        person person1 = new person { login_user = sLoginReg.Text, name = sNameReg.Text, phone = sPhoneReg.Text };
+                        db.users.Add(user); //добавление объекта в бд
+                        db.person.Add(person1);
+                        db.SaveChanges(); //сохранение данных
+                        sStatus.Content = "Регистрация успешна.";
+                        CancelReg();
+                    }
+                    else
+                    {
+                        sStatus.Content = "Поля заполнены неверно";
+                        MessageBox.Show("Для логина и пароля используйте\nлатинские заглавные и прописные буквы и цифры,\nдля имени - только буквы");
+                    }
                 }
-                else if (Authorization.ValidInput(sLoginReg.Text) && Authorization.ValidInput(sPassReg.Password)) //проверка введенных данных, если все верно, то создается новый пользователь.
-                {
-                    users user = new users { login = sLoginReg.Text, pass = sPassReg.Password, role = 1 }; //создаем объект user
-                    person person1 = new person { login_user = sLoginReg.Text, name = sNameReg.Text, phone = sPhoneReg.Text };
-                    db.users.Add(user); //добавление объекта в бд
-                    db.person.Add(person1);
-                    db.SaveChanges(); //сохранение данных
-                    sStatus.Content = "Регистрация успешна.";
-                    bckgrnd1.Visibility = Visibility.Visible;
-                    loginForm.Visibility = Visibility.Visible;
-                    bckgrnd2.Visibility = Visibility.Hidden;
-                    regForm.Visibility = Visibility.Hidden;
-                }
-                else
-                {
-                    sStatus.Content = "Используйте латинские заглавные\nи прописные буквы и цифры!";
-                }
+            }
+            catch
+            {
+                sStatus.Content = "Ошибка! Возможно проблемы с сетью.";
             }
         }
 
-        private void OpenRegForm(object sender, RoutedEventArgs e) //открытие формы регистрации
+        private void OpenRegForm(object sender, RoutedEventArgs e) //ОТКРЫТИЕ ФОРМЫ РЕГИСТРАЦИИ ПРИ НАЖАТИИ КНОПКИ
+        {
+            OpenRegForm();
+        }
+
+        private void OpenRegForm() //ОТКРЫТИЕ ФОРМЫ РЕГИСТРАЦИИ
         {
             bckgrnd1.Visibility = Visibility.Hidden;
             loginForm.Visibility = Visibility.Hidden;
             bckgrnd2.Visibility = Visibility.Visible;
             regForm.Visibility = Visibility.Visible;
-            sStatus.Content = "";
+            ClearRegData();
         }
 
-        private void CancelReg(object sender, RoutedEventArgs e)//отмена и закрытие формы регистрации
+        private void CancelReg(object sender, RoutedEventArgs e)//ОТМЕНА И ЗАКРЫТИЕ ФОРМЫ РЕГИСТРАЦИИ ПРИ НАЖАТИИ КНОПКИ
+        {
+            CancelReg();
+        }
+
+        private void CancelReg()//ОТМЕНА И ЗАКРЫТИЕ ФОРМЫ РЕГИСТРАЦИИ
         {
             bckgrnd1.Visibility = Visibility.Visible;
             loginForm.Visibility = Visibility.Visible;
             bckgrnd2.Visibility = Visibility.Hidden;
             regForm.Visibility = Visibility.Hidden;
+            ClearRegData();
+        }
+
+        private void ClearRegData()//ОЧИСТКА ПОЛЕЙ В РЕГИСТРАЦИОННОЙ ФОРМЕ
+        {
             sStatus.Content = "";
+            sLoginReg.Text = "";
+            sPassReg.Password = "";
+            sNameReg.Text = "";
+            sPhoneReg.Text = "";
         }
     }
 
@@ -106,17 +134,37 @@ namespace wpf_login
     {
         MainWindow mainWindow = new MainWindow();
 
-        public static bool ValidInput(string userData) //Проверка вводимых данных на соотвествие требованиям: латинские заглавные и прописные буквы, цифры.
+        public static bool ValidInput(string userData, string type) //ПРОВЕРИТЬ ВВОДИМЫЕ ДАННЫЕ
         {
-            string upList = "ABCDEFGHIJKLMNOPRSTUVWXYZ";
-            string lowList = "abcdefghijklmnoprstuvwxyz";
-            string numericList = "1234567890";
-            return (userData.IndexOfAny(upList.ToCharArray()) > -1)
-            && (userData.IndexOfAny(lowList.ToCharArray()) > -1)
-            && (userData.IndexOfAny(numericList.ToCharArray()) > -1);
+            if (type == "login")
+            {
+                string upList = "ABCDEFGHIJKLMNOPRSTUVWXYZ-";
+                string lowList = "abcdefghijklmnoprstuvwxyz_";
+                string numericList = "1234567890";
+                return (userData.IndexOfAny(upList.ToCharArray()) > -1)
+                || (userData.IndexOfAny(lowList.ToCharArray()) > -1)
+                || (userData.IndexOfAny(numericList.ToCharArray()) > -1);
+            }
+            if (type == "pass")
+            {
+                string upList = "ABCDEFGHIJKLMNOPRSTUVWXYZ-";
+                string lowList = "abcdefghijklmnoprstuvwxyz_";
+                string numericList = "1234567890";
+                return (userData.IndexOfAny(upList.ToCharArray()) > -1)
+                && (userData.IndexOfAny(lowList.ToCharArray()) > -1)
+                && (userData.IndexOfAny(numericList.ToCharArray()) > -1);
+            }
+            if (type == "name")
+            {
+                string upList = "ABCDEFGHIJKLMNOPRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+                string lowList = "abcdefghijklmnoprstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+                return (userData.IndexOfAny(upList.ToCharArray()) > -1)
+                && (userData.IndexOfAny(lowList.ToCharArray()) > -1);
+            }
+            return true;
         }
 
-        public static bool Checklogin(string userData)  //проверка на существование пользователя
+        public static bool Checklogin(string userData)  //ПРОВЕРИТЬ, СУЩЕСТВУЕТ ЛИ ПОЛЬЗОВАТЕЛЬ
         {
             using (dbUsersEntities db = new dbUsersEntities())
             {
@@ -124,7 +172,7 @@ namespace wpf_login
             }
         }
 
-        public static bool CheckPass(string userData) //проверка на совпадение пароля
+        public static bool CheckPass(string userData) //ПРОВЕРИТЬ, СОВПАДАЮТ ЛИ ПАРОЛИ
         {
             using (dbUsersEntities db = new dbUsersEntities())
             {
@@ -133,19 +181,19 @@ namespace wpf_login
         }
     }
 
-    public class SessionTimer//Таймер сессии
+    public class SessionTimer//ТАЙМЕР СЕССИИ
     {
         public DateTime t1, t2;
         Timer timer1 = new Timer();
+
         public SessionTimer() //включить таймер
         {
             timer1.Interval = 1000;
             timer1.Start();
             t1 = DateTime.Now;
-            Task.Delay(100);//обновление таймера каждую секунду
         }
 
-        public void SaveLog(string login)//остановить таймер и записать в лог информацию о сессии.
+        public void SaveLog(string login)//ОСТАНОВИТЬ ТАЙМЕР И ЗАПИСАТЬ В ЛОГ ИНФОРМАЦИЮ О СЕССИИ
         {
             t2 = DateTime.Now;
             TimeSpan ts = t2 - t1;
@@ -162,11 +210,10 @@ namespace wpf_login
                 db.logsData.Add(log);
                 db.SaveChanges();
             }
-
             timer1.Stop();
         }
 
-        public static string GetLast(string login)//получение данных о последней сессии
+        public static string GetLast(string login)//ПОЛУЧИТЬ ДАННЫЕ О ПОСЛЕДНЕЙ СЕССИИ
         {
             using (dbUsersEntities db = new dbUsersEntities())
             {

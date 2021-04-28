@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Data.Entity;
-using System.Timers;
 
 namespace wpf_login
 {
@@ -25,16 +13,25 @@ namespace wpf_login
             InitializeComponent();
         }
 
-        private void SaveLog(object sender, EventArgs e)//остановить таймер и записать в лог информацию о сессии. Срабатывание при закрытии окна
+        private void SaveLog(object sender, EventArgs e)//ОСТАНОВИТЬ ТАЙМЕР И ЗАПИСАТЬ ИНФОРМАЦИЮ О СЕССИИ
         {
-            Timer.SaveLog(sLogin.Text);
+            try
+            {
+                Timer.SaveLog(sLogin.Text);
+            }
+            catch
+            {
+                sStatus.Content = "Ошибка! Возможно проблемы с сетью.";
+            }
         }
 
-        private void Change(object sender, RoutedEventArgs e)//изменение своих данных
+        private void Change(object sender, RoutedEventArgs e)//ИЗМЕНИТЬ СВОИ ДАННЫЕ (ДАННЫЕ ТЕКУЩЕЙ УЧЕТНОЙ ЗАПИСИ)
         {
+            try
+            {
                 using (dbUsersEntities db = new dbUsersEntities())
                 {
-                    if (Authorization.ValidInput(sPass.Text))
+                    if (Authorization.ValidInput(sPass.Text, "pass"))
                     {
                         var changedUser = db.users.Where(c => c.login == sLogin.Text).FirstOrDefault();
                         var changedPerson = db.person.Where(c => c.login_user == sLogin.Text).FirstOrDefault();
@@ -45,49 +42,61 @@ namespace wpf_login
                     }
                     else
                     {
-                    sStatus.Content = "Используйте латинские заглавные\nи прописные буквы и цифры\nдля пароля!";
+                        sStatus.Content = "Используйте латинские заглавные\nи прописные буквы и цифры\nдля пароля!";
                     }
                 }
                 sStatus.Content = "Данные изменены";
+            }
+            catch
+            {
+                sStatus.Content = "Ошибка! Возможно проблемы с сетью.";
+            }
         }
 
-        private void Edit(object sender, RoutedEventArgs e)//открыть форму редактирования данных
+        private void Edit(object sender, RoutedEventArgs e)//ОТКРЫТЬ ФОРМУ РЕДАКТИРОВАНИЯ ДАННЫХ
         {
             editForm.Visibility = Visibility.Visible;
             viewForm.Visibility = Visibility.Hidden;
             sStatus.Content = "";
         }
 
-        private void ToReturn(object sender, RoutedEventArgs e)//вернуться к форме просмотра данных
+        private void ToReturn(object sender, RoutedEventArgs e)//ВЕРНУТЬСЯ К ФОРМЕ ПРОСМОТРА ДАННЫХ
         {
             editForm.Visibility = Visibility.Hidden;
             viewForm.Visibility = Visibility.Visible;
             sStatus.Content = "";
         }
 
-        private void ViewData(object sender, RoutedEventArgs e)//посмотреть данные
+        private void ViewData(object sender, RoutedEventArgs e)//ПОСМОТРЕТЬ ДАННЫЕ
         {
-            if (Authorization.Checklogin(sLogin.Text))
+            try
             {
-                using (dbUsersEntities db = new dbUsersEntities())
+                if (Authorization.Checklogin(sLogin.Text))
                 {
-                    int codePerson = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.code_person).FirstOrDefault();
-                    string name = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.name).FirstOrDefault();
-                    string phone = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.phone).FirstOrDefault();
-                    int? codeRole = db.users.Where(c => c.login == sLogin.Text).Select(c => c.role).FirstOrDefault();
-                    string role = db.role.Where(c => c.code_role == codeRole).Select(c => c.role1).FirstOrDefault();
-                    sNameView.Content = "Имя:  " + name;
-                    sPhoneView.Content = "Телефон:  " + phone;
-                    sRoleView.Content = "Роль:  " + role;
-                    sStatus.Content = "Данные о пользователе получены";
+                    using (dbUsersEntities db = new dbUsersEntities())
+                    {
+                        int codePerson = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.code_person).FirstOrDefault();
+                        string name = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.name).FirstOrDefault();
+                        string phone = db.person.Where(c => c.login_user == sLogin.Text).Select(c => c.phone).FirstOrDefault();
+                        int? codeRole = db.users.Where(c => c.login == sLogin.Text).Select(c => c.role).FirstOrDefault();
+                        string role = db.role.Where(c => c.code_role == codeRole).Select(c => c.role1).FirstOrDefault();
+                        sNameView.Content = "Имя:  " + name;
+                        sPhoneView.Content = "Телефон:  " + phone;
+                        sRoleView.Content = "Роль:  " + role;
+                        sStatus.Content = "Данные о пользователе получены";
+                    }
+                }
+                else
+                {
+                    sNameView.Content = "";
+                    sPhoneView.Content = "";
+                    sRoleView.Content = "";
+                    sStatus.Content = "Такого пользователя не существует!";
                 }
             }
-            else
+            catch
             {
-                sNameView.Content = "";
-                sPhoneView.Content = "";
-                sRoleView.Content = "";
-                sStatus.Content = "Такого пользователя не существует!";
+                sStatus.Content = "Ошибка! Возможно проблемы с сетью.";
             }
         }
     }

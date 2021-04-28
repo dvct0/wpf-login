@@ -5,9 +5,9 @@
       <PropertyRef Name="code_person" />
     </Key>
     <Property Name="code_person" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="login_user" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="login_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="logsData" Relationship="Self.FK_logsData_person" FromRole="person" ToRole="logsData" />
     <NavigationProperty Name="users" Relationship="Self.FK_person_users" FromRole="person" ToRole="users" />
   </EntityType>
@@ -16,7 +16,7 @@
       <PropertyRef Name="code_role" />
     </Key>
     <Property Name="code_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="role1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="users" Relationship="Self.FK_users_role" FromRole="role" ToRole="users" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -33,8 +33,8 @@
     <Key>
       <PropertyRef Name="login" />
     </Key>
-    <Property Name="login" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="pass" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="role" Type="Int32" />
     <NavigationProperty Name="person" Relationship="Self.FK_person_users" FromRole="users" ToRole="person" />
     <NavigationProperty Name="role1" Relationship="Self.FK_users_role" FromRole="users" ToRole="role" />

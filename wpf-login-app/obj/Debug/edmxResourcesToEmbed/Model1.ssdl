@@ -14,16 +14,16 @@
       <PropertyRef Name="code_person" />
     </Key>
     <Property Name="code_person" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="login_user" Type="varchar" MaxLength="30" />
-    <Property Name="phone" Type="varchar" MaxLength="30" />
-    <Property Name="name" Type="varchar" MaxLength="30" />
+    <Property Name="login_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="role">
     <Key>
       <PropertyRef Name="code_role" />
     </Key>
     <Property Name="code_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="role" Type="varchar" MaxLength="30" />
+    <Property Name="role" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -39,8 +39,8 @@
     <Key>
       <PropertyRef Name="login" />
     </Key>
-    <Property Name="login" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="pass" Type="varchar" MaxLength="30" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="pass" Type="nvarchar" MaxLength="50" />
     <Property Name="role" Type="int" />
   </EntityType>
   <Association Name="FK_logsData_person">
