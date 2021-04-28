@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\user\Desktop\zadaniya\cs\wpf_login\obj\Debug\
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\wpf-login-app\obj\Debug\
 wpf_login
 none
 false
 DEBUG;TRACE
-C:\Users\user\Desktop\zadaniya\cs\wpf_login\App.xaml
+C:\Users\user\Desktop\zadaniya\cs\wpf_login\wpf-login-app\App.xaml
 3614488611
 21750853300
 18-1568313284
-18-1654334105
+18-1749323736
 AdminPanel.xaml;MainWindow.xaml;UserPanel.xaml;
 
 True

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:wpf_login"
         mc:Ignorable="d"
         Title="AdminPanel" Height="450" Width="800" MinHeight="450" MinWidth="800"
-        Background="#E0F2F1" Closed="SaveLog">
+        WindowStartupLocation="CenterScreen" Background="#E0F2F1" Closed="SaveLog">
 
     <Grid>
         <TextBox x:Name="Login" Visibility="Collapsed"></TextBox>
@@ -22,8 +22,8 @@
             </Button>
             <WrapPanel Orientation="Vertical">
                 <WrapPanel>
-                    <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Логин</Label>
-                    <TextBox x:Name="sLoginView" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                    <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="70" FontSize="14" Margin="10">Логин</Label>
+                    <TextBox x:Name="sLoginView" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="5"/>
@@ -52,7 +52,7 @@
                 <WrapPanel Orientation="Vertical">
                     <WrapPanel>
                         <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Логин</Label>
-                        <TextBox x:Name="sLogin" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                        <TextBox x:Name="sLogin" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -77,8 +77,8 @@
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical">
                     <WrapPanel>
-                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Пароль</Label>
-                        <TextBox x:Name="sPass" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Left" Width="65" FontSize="14" Margin="10">Пароль</Label>
+                        <TextBox x:Name="sPass" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -87,8 +87,8 @@
                         </TextBox>
                     </WrapPanel>
                     <WrapPanel>
-                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Роль</Label>
-                        <TextBox x:Name="sRole" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Left" Width="65" FontSize="14" Margin="10">Роль</Label>
+                        <TextBox x:Name="sRole" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -99,8 +99,8 @@
                 </WrapPanel>
                 <WrapPanel Orientation="Vertical">
                     <WrapPanel>
-                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Имя</Label>
-                        <TextBox x:Name="sName" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Left" Width="70" FontSize="14" Margin="10">Имя</Label>
+                        <TextBox x:Name="sName" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -109,8 +109,8 @@
                         </TextBox>
                     </WrapPanel>
                     <WrapPanel>
-                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Center" Width="65" FontSize="14" Margin="10">Телефон</Label>
-                        <TextBox x:Name="sPhone" VerticalAlignment="Center" FontSize="14" Background="Azure" MinWidth="100" Margin="10">
+                        <Label Foreground="#263238" FontWeight="Bold" HorizontalContentAlignment="Left" Width="70" FontSize="14" Margin="10">Телефон</Label>
+                        <TextBox x:Name="sPhone" VerticalAlignment="Center" FontSize="14" Background="Azure" Width="100" Margin="10">
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="5"/>
@@ -121,8 +121,6 @@
                 </WrapPanel>
             </WrapPanel>
         </WrapPanel>
-        <!--TIMER-->
-        <Label x:Name="sTimer" Width="100px" Height="25px" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#263238"/>
         <!--STATUS-->
         <Label x:Name="sStatus" Foreground="#263238" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Label>
     </Grid>
